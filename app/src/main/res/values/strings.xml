@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Book_A_Meal</string>
+    <string name="app_name_main">Book A Meal</string>
 </resources>
