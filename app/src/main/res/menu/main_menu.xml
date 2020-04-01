@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/login_main_menu"
+          android:title="@string/login_main_menu" />
+    <item android:id="@+id/register_main_menu"
+          android:title="@string/register_main_menu" />
+    <item android:id="@+id/loginCaterer_main_menu"
+          android:title="@string/loginCaterer_main_menu" />
+    <item android:id="@+id/registerCaterer_main_menu"
+           android:title="@string/registerCaterer_main_menu" />
+</menu>
