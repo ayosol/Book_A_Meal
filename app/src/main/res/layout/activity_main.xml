@@ -24,6 +24,7 @@
     </ImageView>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginLeft="8dp"
@@ -57,19 +58,18 @@
 
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="340dp"
+        android:layout_height="480dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="8dp"
+        android:background="@null"
+        app:layout_constraintLeft_toLeftOf="@id/imageView"
+        app:layout_constraintRight_toRightOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <!--    <TextView-->
-<!--        android:id="@+id/appNameTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:fontFamily="monospace"-->
-<!--        android:text="@string/app_name_main"-->
-<!--        android:textColor="@color/design_default_color_background"-->
-<!--        android:textSize="40sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
