@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Book_A_Meal</string>
     <string name="app_name_main">Book A Meal</string>
+    <string name="login_main_menu">Login</string>
+    <string name="register_main_menu">Register</string>
+    <string name="loginCaterer_main_menu">Login as a Caterer</string>
+    <string name="registerCaterer_main_menu">Register as a Caterer</string>
 </resources>
