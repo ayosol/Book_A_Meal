@@ -1,6 +1,7 @@
 package com.example.book_a_meal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -8,6 +9,7 @@ import android.text.style.ForegroundColorSpan;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     TextView nameView;
     SpannableString spannableString;
     ImageView menuImage;
+    FrameLayout frameLayout;
+    Fragment fragment;
 
     boolean isMenuClosed = true;
 
@@ -34,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         nameView.setText(spannableString);
 
         menuImage = findViewById(R.id.menu_imageView);
-
+        frameLayout = findViewById(R.id.frameLayout);
+        fragment  = null;
     }
 
     public void menuImage(View view){
@@ -51,25 +56,26 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onMenuItemClick(MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.login_main_menu:
-                            Toast.makeText(getApplicationContext(), "login", Toast.LENGTH_SHORT).show();
+                            fragment = new Login();
                             menuImage.setImageResource(R.drawable.sharp_menu);
-                            return true;
+                            break;
                         case R.id.register_main_menu:
-                            Toast.makeText(getApplicationContext(), "register", Toast.LENGTH_SHORT).show();
+                            fragment = new Register();
                             menuImage.setImageResource(R.drawable.sharp_menu);
-                            return true;
+                            break;
                         case R.id.loginCaterer_main_menu:
-                            Toast.makeText(getApplicationContext(), "login as a Caterer", Toast.LENGTH_SHORT).show();
+                            fragment = new LoginCaterer();
                             menuImage.setImageResource(R.drawable.sharp_menu);
-                            return true;
+                            break;
                         case R.id.registerCaterer_main_menu:
-                            Toast.makeText(getApplicationContext(), "register asa Caterer", Toast.LENGTH_SHORT).show();
+                            fragment = new RegisterCaterer();
                             menuImage.setImageResource(R.drawable.sharp_menu);
-                            return true;
+                            break;
                         default:
                             menuImage.setImageResource(R.drawable.sharp_menu);
                             return false;
                     }
+                    return loadFragment(fragment);
                 }
             });
 
@@ -87,6 +93,17 @@ public class MainActivity extends AppCompatActivity {
             menuImage.setImageResource(R.drawable.sharp_menu);
             isMenuClosed = true;
         }
+    }
+
+    private boolean loadFragment(Fragment fragment){
+        if (fragment != null){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frameLayout,fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
 
